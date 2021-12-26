@@ -4,8 +4,17 @@ var userClickedPattern = [];
 var level = 0;
 var started = false;
 
-// to start game
+// to start game using keyboard
 $(document).keydown(function() {
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+});
+
+// to start game using mouse
+$(document).click(function() {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
